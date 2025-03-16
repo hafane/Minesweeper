@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Fira Code", monospace;
+}
+
+body {
+    background: rgb(121, 121, 121);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.game-header {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+    background: rgb(180, 180, 180);
+}
+
+.game-header .game-title {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.game-header .game-title .text {
+    font-size: 4rem;
+    font-weight: bold;
+    color: rgba(180, 240, 230, 1);
+}
+
+.game-header .game-controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-header .game-controls .board-size {
+    display: flex;
+    font-size: 20px;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+
+.game-header .game-controls .mines-count {
+    display: flex;
+    font-size: 20px;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+
+.input {
+    border: none;
+    background: none;
+    outline: none;
+    text-align: center;
+    font-size:  19px;
+    border-bottom: 2px solid rgba(180, 240, 230, 1);
+}
+
+.button {
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(180, 180, 180);
+    width: 100%;
+    padding: 0.6rem;
+
+    &.button_cyan {
+        background-color: rgba(180, 240, 230, 1);
+    }
+
+    &.button_mt2 {
+        margin-top: 2rem;
+    }
+
+    &:active {
+        background-color: rgba(180, 240, 230, 0.5);
+    }
+}
+
+.game-board {
+    display: grid;
+    gap: 2px;
+    margin: 20px auto;
+    border: 5px solid rgb(180, 180, 180);
+    background-color: rgb(180, 180, 180);
+    box-shadow: 0 0 20px #555;
+
+    &.empty {
+        display: none;
+    }
+}
+
+.game-board .cell {
+    width: 30px;
+    height: 30px;
+    background-color: #555;
+    cursor: pointer;
+    text-align: center;
+
+    &.revealed {
+        background-color: #fff;
+        cursor: default;
+        color: #000;
+    }
+
+    &.mine.revealed {
+        background-image: url("./assets/mine.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 80%;
+    }
+
+    &.flagged {
+        background-image: url("./assets/flag.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
