@@ -45,8 +45,8 @@ function placeMines() {
         const cell = document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`)
         if (!cell.dataset.ismine) {
             cell.setAttribute("data-ismine", `${true}`)
+            placedMinesCount++
         }
-        placedMinesCount++
     }
 }
 
